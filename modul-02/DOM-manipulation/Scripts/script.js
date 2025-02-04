@@ -30,5 +30,3 @@ articleToInsert =
   "</div>";
 
 mainContentArea.innerHTML = mainContentArea.innerHTML + articleToInsert;
-mainContentArea.innerHTML = mainContentArea.innerHTML + articleToInsert;
-mainContentArea.innerHTML = mainContentArea.innerHTML + articleToInsert;

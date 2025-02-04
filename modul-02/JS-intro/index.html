@@ -14,23 +14,12 @@
     </style>
   </head>
   <body>
-    <p id="hans"></p>
     <h1>JavaScript: Intro</h1>
     <script type="text/javascript">
-      let hest = "Hestevariabel";
-      let number = 4;
-
-      document.write("<p>");
-      document.write(hest);
-      document.write("<br />");
-      document.write(number);
-      document.write("</p>");
-
       document.write("<h1>Current Date and Time</h1>");
 
       let now = new Date();
 
-      console.log("Hej med dig!");
       console.log(now.toLocaleDateString());
 
       let localTime = now.toString();
@@ -48,22 +37,9 @@
       let mins = now.getMinutes();
       let secs = now.getSeconds();
 
-      let firstVar = 12;
-      //const secondVar = 0;
-      let secondVar = 0;
-      secondVar = firstVar + 1;
-
       document.write("<h1>");
       document.write(hours + ":" + mins + ":" + secs);
       document.write("</h1>");
-
-      let num1 = 42;
-      let num2 = "2 ";
-
-      let result = num1 + num2;
-      console.log(result);
-      console.log(result / 2);
-      console.log(secs);
     </script>
 
     <h1>Displaying the last modified date</h1>
@@ -77,37 +53,9 @@
     <div id="hans" class="heading">A for-loop</div>
 
     <script type="text/javascript">
-      let element = document.getElementById("hans");
-      console.log(element);
-      element.innerHTML = "<strong>Hej Hans</strong>";
-      console.log(element.innerHTML);
-      console.log(element.innerText);
-      element.innerText = "<strong>Hej Hans</strong>";
+      numberArray[0] = obj.name;
 
       let numberArray = [1, 2, 3, 4, 5, 6, 8, 9, 10];
-
-      const obj = { name: "hest" };
-
-      const obj1 = { name: "Thomas" };
-      const obj2 = { name: "Hans" };
-      const obj3 = { name: "Henrik" };
-      const obj4 = { name: "Søren" };
-      const obj5 = { name: "Paul" };
-
-      let persons = [obj1, obj2, obj3, obj4, obj5];
-
-      console.log(persons);
-
-      console.log(obj.name);
-      console.log("length of numberArray: " + numberArray.length);
-      obj.name = "Hans";
-      console.log(obj.name);
-
-      //NEJ FY!!!!
-      //obj = 42;
-
-      //numberArray[0] = element.innerHTML;
-      numberArray[0] = obj.name;
 
       for (let i = 0; i < numberArray.length; i++) {
         document.write("<div>");
