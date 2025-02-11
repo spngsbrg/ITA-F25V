@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript: Intro</title>
+    <style>
+      .heading {
+        color: rgb(128, 128, 128);
+        font-size: xx-large;
+        font-family: sans-serif;
+        padding-top: 20px;
+        padding-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JavaScript: Intro</h1>
+    <script type="text/javascript">
+      document.write("<h1>Current Date and Time</h1>");
+
+      let now = new Date();
+
+      console.log(now.toLocaleDateString());
+
+      let localTime = now.toString();
+
+      let gmtTime = now.toGMTString();
+
+      document.write("<p>");
+      document.write("<strong>Local time:</strong> " + localTime + "<br/>");
+      document.write("<strong>GMT time:</strong> " + gmtTime);
+      document.write("</p>");
+    </script>
+
+    <h1>More JS:</h1>
+    
+    <script type="text/javascript">
+      let hours = now.getHours();
+      let mins = now.getMinutes();
+      let secs = now.getSeconds();
+
+      document.write("<h1>");
+      document.write(hours + ":" + mins + ":" + secs);
+      document.write("</h1>");
+    </script>
+
+    <h1>Displaying the last modified date</h1>
+
+    <p>This page was last modified on:</p>
+
+    <script type="text/javascript">
+      document.write(document.lastModified);
+    </script>
+
+    <div id="loops">For-loops</div>
+
+    <script type="text/javascript">
+      let numberArray = [1, 2, 3, 4, 5, 6, 8, 9, 10];
+
+      for (let i = 0; i < numberArray.length; i++) {
+        document.write("<div>");
+        document.write(numberArray[i]);
+        document.write("</div>");
+      }
+
+      let persons = [
+        { name: "Foo", age: 25 },
+        { name: "Bar", age: 26 },
+        { name: "Baz", age: 27 },
+      ];
+
+      document.write("<table border='1'>");
+      for (let i = 0; i < persons.length; i++) {
+        document.write("<tr>");
+        document.write("<td> Name: </td>");
+        document.write("<td>" + persons[i].name + "</td>");
+        document.write("</tr>");
+      }
+      document.write("</table>");
+
+      let loopElement = document.getElementById("loops");
+      //loopElement.className = "heading";
+      loopElement.setAttribute("class", "heading");
+    </script>
+  </body>
+</html>
