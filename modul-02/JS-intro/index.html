@@ -32,6 +32,8 @@
       document.write("</p>");
     </script>
 
+    <h1>More JS:</h1>
+    
     <script type="text/javascript">
       let hours = now.getHours();
       let mins = now.getMinutes();
@@ -50,11 +52,9 @@
       document.write(document.lastModified);
     </script>
 
-    <div id="hans" class="heading">A for-loop</div>
+    <div id="loops">For-loops</div>
 
     <script type="text/javascript">
-      numberArray[0] = obj.name;
-
       let numberArray = [1, 2, 3, 4, 5, 6, 8, 9, 10];
 
       for (let i = 0; i < numberArray.length; i++) {
@@ -63,7 +63,13 @@
         document.write("</div>");
       }
 
-      document.write("<table>");
+      let persons = [
+        { name: "Foo", age: 25 },
+        { name: "Bar", age: 26 },
+        { name: "Baz", age: 27 },
+      ];
+
+      document.write("<table border='1'>");
       for (let i = 0; i < persons.length; i++) {
         document.write("<tr>");
         document.write("<td> Name: </td>");
@@ -71,6 +77,10 @@
         document.write("</tr>");
       }
       document.write("</table>");
+
+      let loopElement = document.getElementById("loops");
+      //loopElement.className = "heading";
+      loopElement.setAttribute("class", "heading");
     </script>
   </body>
 </html>
