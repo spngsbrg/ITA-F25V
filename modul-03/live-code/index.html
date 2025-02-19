@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .orange {
+        color: orange;
+        font-family: fantasy;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Overskrift</h1>
+    <div id="click-txt"></div>
+    <button
+      onclick="document.getElementById('click-txt').innerHTML='You Clicked The Button!!!'"
+    >
+      Click me!
+    </button>
+
+    <script>
+      let headings = document.getElementsByTagName("h1");
+      console.log(headings);
+      headings[0].className = "orange";
+
+      let paragraph = document.createElement("p");
+      console.log(paragraph);
+      //paragraph.innerText = "Dette er et eksempel på <strong>FED</strong> tekst";
+      paragraph.innerHTML =
+        "Dette er et eksempel på <strong>FED</strong> tekst";
+      let body = document.getElementsByTagName("body");
+      body[0].appendChild(paragraph);
+
+      console.log(paragraph.innerText);
+      console.log(paragraph.innerHTML);
+
+      headings[0].style.fontFamily = "Sans-serif";
+    </script>
+  </body>
+</html>
