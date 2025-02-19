@@ -13,6 +13,7 @@ function Album(artist, album, totalTracks) {
   this.totalTracks = totalTracks;
 }
 
+
 /**
  * Function to add a div to the html-page containg a description of an album.
  * @param {Album} album : The album-object to be displayed on the page
