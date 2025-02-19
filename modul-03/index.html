@@ -4,12 +4,15 @@
     <meta charset="UTF-8" />
     <title>DOM-manipulation</title>
     <link href="Styles/styles.css" media="screen" rel="stylesheet" />
+    <script src="Scripts/jsonLoadScript.js"></script>
   </head>
-  <body>
+  <body onload="init()">
     <div>
       <h1>DOM-manipulation</h1>
     </div>
-    <div id="main-content-area"></div>
+    <div id="main-content-area">
+      <button id="loadBtn" onclick="init">Load Articles</button>
+    </div>
 
     <div id="sidebar">
       <h3>Links:</h3>
@@ -23,7 +26,5 @@
         </li>
       </ul>
     </div>
-
-    <script src="Scripts/jsonLoadScript.js"></script>
   </body>
 </html>
