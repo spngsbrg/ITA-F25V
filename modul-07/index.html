@@ -7,7 +7,65 @@
   </head>
   <body>
     <script>
-      let numberArray = [2, 6, 4, 9, 1, 7, 2, 3, 8, 0, 1, 4, 6];
+      let numberArray = [
+        2,
+        6,
+        "hest",
+        4,
+        9,
+        "1",
+        7,
+        2,
+        "tre",
+        8,
+        0,
+        1,
+        4,
+        "pony",
+        6,
+      ];
+      console.log(numberArray);
+      numberArray.sort();
+      console.log(numberArray);
+
+      const dataset = [
+        [5, 20],
+        [480, 90],
+        [250, 50],
+        [100, 33],
+        [330, 95],
+        [410, 12],
+        [475, 44],
+      ];
+
+      console.log(dataset[0][0]);
+      console.log(dataset[0][1]);
+
+      dataset.sort();
+
+      console.log(dataset);
+
+      dataset.sort(function (a, b) {
+        return a[0] - b[0];
+      });
+
+      console.log(dataset);
+
+      const datasetObj = [
+        { param1: 5, param2: 20 },
+        { param1: 480, param2: 90 },
+        { param1: 250, param2: 50 },
+        { param1: 100, param2: 33 },
+        { param1: 330, param2: 95 },
+        { param1: 410, param2: 12 },
+        { param1: 475, param2: 44 },
+      ];
+
+      datasetObj.sort(function (a, b) {
+        return a.param1 - b.param1;
+      });
+
+      console.log(datasetObj);
     </script>
   </body>
 </html>

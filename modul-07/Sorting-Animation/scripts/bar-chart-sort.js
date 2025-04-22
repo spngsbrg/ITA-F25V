@@ -116,7 +116,7 @@ function createDefaultChart(dataset) {
       return h - padding - axisPadding - yScale(d[1]);
     })
     .attr("fill", function (d) {
-      return "rgb(0, 0, " + (256 - d[1]) + ")";
+      return "rgb(0, 0, " + (256 - d[1] * 2) + ")";
     });
 }
 
