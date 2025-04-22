@@ -1,6 +1,7 @@
 // Width og height til SVG-elementet
 const w = 500;
 const h = 100;
+const padding = 30;
 
 const dataset = [
   [5, 20],
@@ -24,7 +25,7 @@ const xScale = d3
       return d[0];
     }),
   ])
-  .range([30, w - 30])
+  .range([padding, w - padding])
   .nice();
 
 //Skala for y-aksen
@@ -36,7 +37,7 @@ const yScale = d3
       return d[1];
     }),
   ])
-  .range([30, h - 30])
+  .range([padding, h - padding])
   .nice();
 
 //Scatter plot

@@ -79,6 +79,6 @@ for (let d in data) {
     "scaled x,y: " +
       Math.round(xScale(data[d][0])) +
       "," +
-      Math.round(xScale(data[d][1]))
+      Math.round(yScale(data[d][1]))
   );
 }
