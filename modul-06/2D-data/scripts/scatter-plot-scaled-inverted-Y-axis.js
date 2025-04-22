@@ -1,6 +1,7 @@
 // Width og height til SVG-elementet
 const w = 700;
 const h = 300;
+const padding = 30;
 
 const dataset = [
   [5, 20],
@@ -24,7 +25,7 @@ const xScale = d3
       return d[0];
     }),
   ])
-  .range([30, w - 30])
+  .range([padding, w - padding])
   .nice();
 
 //Skala for y-aksen
@@ -41,10 +42,10 @@ const yScale = d3
    * det betød at de blev tegnet oppefra og ned, så vi måtte trække dem fra h
    * for at få dem flyttet ned. Ved at bytte om på rækkefølgen af de to tal i range
    * kan vi få dem til at blive tegnet nedefra og op.
-   * Dette skrev vi sidste gang: .range([30, h - 30])
+   * Dette skrev vi sidste gang: .range([padding, h - padding])
    * Dette skriver vi nu:
    **/
-  .range([h - 30, 30])
+  .range([h - padding, padding])
   .nice();
 
 //Scatter plot
@@ -109,13 +110,14 @@ svg
   //Først laves en svg-group med "g"
   .append("g")
   //Så flyttes den til bunden af grafen
-  .attr("transform", "translate(0," + (h - 30) + ")")
+  //.attr("transform", "translate(0,270)")
+  .attr("transform", "translate(0," + (h - padding) + ")")
   //Magi som får akserne til at blive tegnet
   .call(xAxis);
 
 svg
   .append("g")
-  .attr("transform", "translate(" + 30 + ",0)")
+  .attr("transform", "translate(" + padding + ",0)")
   .call(yAxis);
 
 /**
