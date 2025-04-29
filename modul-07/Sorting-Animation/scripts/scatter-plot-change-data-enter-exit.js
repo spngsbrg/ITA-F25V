@@ -86,11 +86,11 @@ function createScaleY(dataset) {
     .nice();
 }
 
-function createAxisX(yScale) {
-  return d3.axisBottom().scale(yScale).ticks(5);
+function createAxisX(xScale) {
+  return d3.axisBottom().scale(xScale).ticks(5);
 }
-function createAxisY(xScale) {
-  return d3.axisLeft().scale(xScale).ticks(5);
+function createAxisY(ycale) {
+  return d3.axisLeft().scale(yScale).ticks(5);
 }
 
 function addSVG(svgWidth, svgHeight) {

@@ -1,6 +1,7 @@
 // Width og height til SVG-elementet
 const w = 700;
 const h = 300;
+const padding = 30;
 
 //De tre datasæt, vi kan vælge imellem - Bemærk at de har samme længde, hvilket gør det nemmere at animere. I dette tilfælde behøver vi blot at opdatere de eksisterende cirkler og labels, da der ikke er kommet flere til.
 const dataset1 = [
@@ -54,15 +55,24 @@ d3.selectAll("#data1, #data2, #data3").on("click", function (e) {
   console.log(id);
 
   // Vælg det rigtige datasæt
-  let newData = dataset1;
-  if (id === "data2") {
-    newData = dataset2;
-  } else if (id === "data3") {
-    newData = dataset3;
+  //let newData = null;
+
+  if (id === "data1") {
+    //newData = dataset1;
+    // Kald animateNewData med det nye datasæt
+    animateNewData(dataset1);
+  } else if (id === "data2") {
+    //newData = dataset2;
+    // Kald animateNewData med det nye datasæt
+    animateNewData(dataset2);
+  } else {
+    //newData = dataset3;
+    // Kald animateNewData med det nye datasæt
+    animateNewData(dataset3);
   }
 
   // Kald animateNewData med det nye datasæt
-  animateNewData(newData);
+  //animateNewData(newData);
 });
 
 //Hjælpefunktioner som sætter de dynamiske data som skal bruges til at lave scales og akser
@@ -75,7 +85,7 @@ function createScaleX(dataset) {
         return d[0];
       }),
     ])
-    .range([30, w - 30])
+    .range([padding, w - padding])
     .nice();
 }
 
@@ -88,15 +98,15 @@ function createScaleY(dataset) {
         return d[1];
       }),
     ])
-    .range([h - 30, 30])
+    .range([h - padding, padding])
     .nice();
 }
 
-function createAxisX(yScale) {
-  return d3.axisBottom().scale(yScale).ticks(5);
+function createAxisX(xScale) {
+  return d3.axisBottom().scale(xScale).ticks(5);
 }
-function createAxisY(xScale) {
-  return d3.axisLeft().scale(xScale).ticks(5);
+function createAxisY(yScale) {
+  return d3.axisLeft().scale(yScale).ticks(5);
 }
 
 function addSVG(svgWidth, svgHeight) {
@@ -148,10 +158,10 @@ function init(dataset, svgWidth, svgHeight) {
       return d[1];
     })
     .attr("x", function (d) {
-      return xScale(d[0]) + 5;
+      return xScale(d[0]) + Math.sqrt(d[1]);
     })
     .attr("y", function (d) {
-      return yScale(d[1]) - 5;
+      return yScale(d[1]) - Math.sqrt(d[1]);
     })
     .attr("font-family", "sans-serif")
     .attr("font-size", "11px")
@@ -159,13 +169,13 @@ function init(dataset, svgWidth, svgHeight) {
 
   svg
     .append("g")
-    .attr("transform", "translate(0," + (h - 30) + ")")
+    .attr("transform", "translate(0," + (h - padding) + ")")
     .attr("id", "xAxis")
     .call(xAxis);
 
   svg
     .append("g")
-    .attr("transform", "translate(" + 30 + ",0)")
+    .attr("transform", "translate(" + padding + ",0)")
     .attr("id", "yAxis")
     .call(yAxis);
 }
@@ -205,10 +215,10 @@ function animateNewData(newData) {
     .duration(1500)
     //Dette skal være slutresultatet på de enkelte attributter
     .attr("x", function (d) {
-      return xScale(d[0]) + 5;
+      return xScale(d[0]) + Math.sqrt(d[1]);
     })
     .attr("y", function (d) {
-      return yScale(d[1]) - 5;
+      return yScale(d[1]) - Math.sqrt(d[1]);
     })
     .attr("font-family", "sans-serif")
     .attr("font-size", "11px")
